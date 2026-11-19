@@ -1,0 +1,98 @@
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1c2333;
+  --muted: #5d6679;
+  --border: #dde2ec;
+  --primary: #1f4fd8;
+  --primary-ink: #ffffff;
+  --admin: #7a3cc4;
+  --error-bg: #fdecec;
+  --error-ink: #a01c1c;
+  --info-bg: #e8f0fe;
+  --info-ink: #1b3f99;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+a { color: var(--primary); }
+h1, h2, h3 { margin: 0 0 .4rem; }
+.muted { color: var(--muted); }
+.center { padding: 3rem; text-align: center; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem; justify-content: center;
+  border: 1px solid var(--primary); background: var(--primary); color: var(--primary-ink);
+  padding: .5rem 1rem; border-radius: 8px; font-size: .95rem; cursor: pointer; text-decoration: none;
+}
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-outline { background: transparent; color: var(--primary); }
+.btn-google {
+  width: 100%; background: #fff; color: #1f1f1f; border-color: #c7ccd6; padding: .75rem 1rem; font-weight: 600;
+}
+.btn-google:hover { background: #f6f8fb; }
+
+.alert { padding: .75rem 1rem; border-radius: 8px; margin: 1rem 0; text-align: left; }
+.alert-error { background: var(--error-bg); color: var(--error-ink); }
+.alert-info { background: var(--info-bg); color: var(--info-ink); }
+
+.login-page { min-height: 100vh; display: grid; place-items: center; padding: 1rem; }
+.login-card {
+  width: 100%; max-width: 400px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 2rem; text-align: center; box-shadow: 0 6px 24px rgba(20, 30, 60, .06);
+}
+.login-logo { font-size: 2.5rem; }
+.login-card h1 { margin-top: .25rem; }
+.login-card .btn-google { margin-top: 1.25rem; }
+.fine-print { font-size: .85rem; color: var(--muted); margin-top: 1.25rem; }
+
+.topbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem;
+  background: var(--surface); border-bottom: 1px solid var(--border); padding: .75rem 1rem;
+}
+.brand { font-weight: 700; font-size: 1.15rem; }
+.nav { display: flex; gap: .25rem; flex-wrap: wrap; flex: 1; }
+.nav a { padding: .4rem .75rem; border-radius: 6px; text-decoration: none; color: var(--muted); }
+.nav a.active { background: var(--info-bg); color: var(--primary); font-weight: 600; }
+.who { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.who-name { font-weight: 600; }
+
+.avatar { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.avatar-fallback {
+  display: inline-grid; place-items: center; background: var(--primary); color: #fff; font-weight: 700;
+}
+.badge {
+  display: inline-block; font-size: .75rem; padding: .15rem .55rem; border-radius: 999px;
+  background: var(--info-bg); color: var(--info-ink); font-weight: 600;
+}
+.badge-admin { background: #f1e7fb; color: var(--admin); }
+
+.content { max-width: 1040px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; margin-top: 1rem;
+}
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.profile-card { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.stat { display: flex; flex-direction: column; gap: .25rem; }
+.stat-label { color: var(--muted); font-size: .85rem; }
+.stat-value { font-size: 1.8rem; font-weight: 700; }
+.stat-value.small { font-size: 1.05rem; }
+
+.search { display: flex; gap: .5rem; margin-top: 1rem; }
+.search input {
+  flex: 1; min-width: 0; padding: .55rem .75rem; border: 1px solid var(--border); border-radius: 8px; font-size: .95rem;
+}
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: .5rem; font-size: .92rem; }
+th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; }
+.user-cell { display: flex; align-items: center; gap: .5rem; }
+.pager { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: 1rem; flex-wrap: wrap; }
+
+.center-page { min-height: 100vh; display: grid; place-content: center; text-align: center; gap: .5rem; padding: 1rem; }
+.center-page h1 { font-size: 3rem; }
